@@ -15,6 +15,8 @@ The [Approov backend connection package](https://www.npmjs.com/package/@approov/
 
 To follow this guide you should have received an onboarding email for a trial or paid Approov account.
 
+Note that the minimum OS requirement for iOS is 10 and for Android the minimum SDK version is 21 (Android 5.0). You cannot use Approov in apps that need to support OS versions older than this.
+
 ## ADDING APPROOV
 
 In order to use Approov you must add the Approov enabled Advanced HTTP package, its `@awesome-cordova-plugins` wrapper and the `Http` connection bridge as follows:
