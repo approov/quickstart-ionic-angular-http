@@ -83,7 +83,7 @@ You should relaunch the app to force it to obtain a new Approov token (or wait a
 Note, that since a bitcode SDK is being used, this normally requires a registration to have been made. To work around this, issue the following command:
 
 ```
-approov sdk -bitcodeAdd 6557
+approov sdk -bitcodeAdd 6713
 ```
 
 You should be able to run the Shapes app and press the Shapes button to successfully get different Shapes. This indicates that Approov tokens are being auccessfully added to the Angular `Http` requests.
