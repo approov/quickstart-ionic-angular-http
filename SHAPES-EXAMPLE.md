@@ -36,6 +36,14 @@ Now run the app on either Android or iOS as follows:
 
 If you wish to run on a physical Android device then connect it to your host platform over USB. See [Run apps on a hardware device](https://developer.android.com/studio/run/device) for full instructions. Use `adb devices` to verify that this device is connected and no other device or emulator is running.
 
+Add the local certificate used to sign apps in Android Studio. The following assumes it is in PKCS12 format:
+
+```
+approov appsigncert -add ~/.android/debug.keystore -storePassword android -autoReg
+```
+
+See [Android App Signing Certificates](https://approov.io/docs/latest/approov-usage-documentation/#android-app-signing-certificates) if your keystore format is not recognized or if you have any issues adding the certificate. 
+
 Firstly you need to prepare the Android build with:
 
 ```
@@ -47,20 +55,11 @@ and then you can run the app on your device or emulator with:
 ```
 ionic cap run android
 ```
-
-Now register the built app with Approov as follows:
-
-```
-approov registration -add android/app/build/outputs/apk/debug/app-debug.apk
-```
-
-You should relaunch the app to force it to obtain a new Approov token (or wait at least 5 minutes).
-
 You should be able to run the Shapes app and press the Shapes button to successfully get different Shapes. This indicates that Approov tokens are being auccessfully added to the Angular `Http` requests.
 
 ## iOS
 
-If you run on a physical device then you will need to register an `.ipa` file. Since obtaining this is quite involved we suggest that you instead ensure that attestation [always passes](https://approov.io/docs/latest/approov-usage-documentation/#adding-a-device-security-policy) on a specific device. Launch the app using:
+If you run on a physical device then you will need to obtain an `.ipa` file. Since this is quite involved we suggest that you instead ensure that attestation [always passes](https://approov.io/docs/latest/approov-usage-documentation/#adding-a-device-security-policy) on a specific device. Launch the app using:
 
 ```
 ionic cap sync ios
@@ -75,15 +74,9 @@ ionic cap run ios
 Make the device always pass by executing:
 
 ```
-approov device -add latest -policy default,always-pass,all
+approov forcepass -addDevice latest
 ```
 
-You should relaunch the app to force it to obtain a new Approov token (or wait at least 5 minutes).
-
-Note, that since a bitcode SDK is being used, this normally requires a registration to have been made. To work around this, issue the following command:
-
-```
-approov sdk -bitcodeAdd 6713
-```
+Relaunch the app (after waiting at least 30 seconds) to force it to obtain a new Approov token.
 
 You should be able to run the Shapes app and press the Shapes button to successfully get different Shapes. This indicates that Approov tokens are being auccessfully added to the Angular `Http` requests.

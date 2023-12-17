@@ -4,7 +4,7 @@ This quickstart is written specifically for Android and iOS apps that are implem
 
 This uses a fork of the [`ionic-native-http-connection-backend` project](https://github.com/sneas/ionic-native-http-connection-backend) to allow Angular network requests to be redirected to the [Approov capable `cordova-plugin-advanced-http` plugin](https://www.npmjs.com/package/@approov/cordova-plugin-advanced-http). We would like to thank the developers of both of these projects.
 
-A worked example using a [Shapes App](https://github.com/approov/quickstart-ionic-angular-http/blob/main/SHAPES-EXAMPLE.md) is also available.
+A step-by-step tutorial guide using our [Shapes App](https://github.com/approov/quickstart-ionic-angular-http/blob/main/SHAPES-EXAMPLE.md) is also available.
 
 The [Approov backend connection package](https://www.npmjs.com/package/@approov/ionic-native-http-connection-backend) works as follows:
 
