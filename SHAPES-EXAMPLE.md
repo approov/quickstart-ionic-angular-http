@@ -55,6 +55,7 @@ and then you can run the app on your device or emulator with:
 ```
 ionic cap run android
 ```
+
 You should be able to run the Shapes app and press the Shapes button to successfully get different Shapes. This indicates that Approov tokens are being auccessfully added to the Angular `Http` requests.
 
 ## iOS
