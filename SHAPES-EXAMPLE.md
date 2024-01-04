@@ -4,11 +4,11 @@ A working example of this integration is provided in the `cap-angular-http` dire
 
 ## WHAT YOU WILL NEED
 * Access to a trial or paid Approov account
-* [Android Studio](https://developer.android.com/studio) installed (version Chipmunk 2021.2.1 is used in this guide) if you will build the Android app. See information about [Android Development](https://ionicframework.com/docs/developing/android) for installation instructions. Note that the `ANDROID_HOME` value must be properly defined to allow building.
-* [Xcode](https://developer.apple.com/xcode/) installed (version 13.4.1 is used in this guide) to build iOS version of application. See information about [iOS Development](https://ionicframework.com/docs/developing/ios) for installation instructions.
-* [Cocoapods](https://cocoapods.org) installed to support iOS building (1.11.3 used in this guide)
-* [NodeJS](https://nodejs.org/en/) v14+ installed in the system
-* [Ionic CLI](https://ionicframework.com/docs/intro/cli) installed in the system (note you may need to use `sudo` when using npm to install the Ionic CLI globally)
+* [Android Studio](https://developer.android.com/studio) installed (version Hedgehog 2023.1.1 is used in this guide) if you will build the Android app. See information about [Android Development](https://ionicframework.com/docs/developing/android) for installation instructions. Note that the `ANDROID_HOME` value must be properly defined to allow building.
+* [Xcode](https://developer.apple.com/xcode/) installed (version 15.1 is used in this guide) to build iOS version of application. See information about [iOS Development](https://ionicframework.com/docs/developing/ios) for installation instructions.
+* [Cocoapods](https://cocoapods.org) installed to support iOS building (1.12.1 used in this guide)
+* [NodeJS](https://nodejs.org/en/) installed in the system (version 20.10.0 was used in this guide). The version of npm was 10.2.3.
+* [Ionic CLI](https://ionicframework.com/docs/intro/cli) installed in the system (version 7.1.6 was used in this guide). Note you may need to use `sudo` when using npm to install the Ionic CLI globally.
 * The `approov` command line tool [installed](https://approov.io/docs/latest/approov-installation/) with access to your account
 * An iOS device or simulator if you are using the iOS platform
 * An Android device or emulator if you are using the Android platform
