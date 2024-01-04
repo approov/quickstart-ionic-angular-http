@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HTTP } from '@awesome-cordova-plugins/approov-advanced-http/ngx';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 })
 
 export class AppComponent {
+  private http: HTTP = new HTTP();
   readonly imageBaseUrl = 'assets/';
   readonly imageExtension = 'png';
   readonly VERSION = 'v3';
@@ -19,6 +21,8 @@ export class AppComponent {
   imageUrl = this.getImageUrl(this.image);
 
   constructor(private httpClient: HttpClient) {
+    // PROVIDE THE CONFIGURATION STRING BELOW
+    this.http.approovInitialize("<enter-your-config-string-here>");
   }
 
   onHelloClick(): void {

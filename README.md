@@ -15,7 +15,7 @@ The [Approov backend connection package](https://www.npmjs.com/package/@approov/
 
 To follow this guide you should have received an onboarding email for a trial or paid Approov account.
 
-Note that the minimum OS requirement for iOS is 10 and for Android the minimum SDK version is 21 (Android 5.0). You cannot use Approov in apps that need to support OS versions older than this.
+Note that the minimum OS requirement for iOS is 13 and for Android the minimum SDK version is 22 (Android 5.1). You cannot use Approov in apps that need to support OS versions older than this.
 
 ## ADDING APPROOV
 
@@ -31,14 +31,13 @@ Note that for Android the minimum SDK version you can use is 21 (Android 5.0). P
 
 ## USING APPROOV
 
-In order to use Approov you must add `NativeHttpModule`, `NativeHttpBackend` and `NativeHttpFallback` into the application's module
+In order to use Approov you must add `NativeHttpModule`, `NativeHttpBackend` and `NativeHttpFallback` as providers into the application's module:
 
 ```Typescript
 import { NgModule } from '@angular/core';
 import { HttpBackend, HttpXhrBackend } from '@angular/common/http';
 import { NativeHttpModule, NativeHttpBackend, NativeHttpFallback } from '@approov/ionic-native-http-connection-backend';
 import { Platform } from '@ionic/angular';
-import { HTTP } from '@awesome-cordova-plugins/approov-advanced-http/ngx';
 
 @NgModule({
     declarations: [],
@@ -53,12 +52,16 @@ import { HTTP } from '@awesome-cordova-plugins/approov-advanced-http/ngx';
 })
 ```
 
-You must also initialize the plugin in `AppModule` as follows:
+You must also initialize the plugin in the initial `AppComponent` as follows:
 
 ```Typescript
-export class AppModule {
-  constructor(private http: HTTP) {
-    http.approovInitialize("<enter-your-config-string-here>");
+import { HTTP } from '@awesome-cordova-plugins/approov-advanced-http/ngx';
+
+export class AppComponent {
+  private http: HTTP = new HTTP();
+
+  constructor() {
+    this.http.approovInitialize("<enter-your-config-string-here>");
   }
 }
 ```

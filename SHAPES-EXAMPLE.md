@@ -23,7 +23,7 @@ cd cap-angular-http
 npm install
 ```
 
-Now find the Approov initialization statement in the `src/app/app.module.ts` file:
+Now find the Approov initialization statement in the `src/app/app.component.ts` file:
 
 ```Typescript
 http.approovInitialize("<enter-your-config-string-here>");
